@@ -65,5 +65,7 @@ public class Test {
             e.printStackTrace();
         }
 
+        registrierung.istAuthentified("ange@yahoo.fr","fra");
+
     }
 }
