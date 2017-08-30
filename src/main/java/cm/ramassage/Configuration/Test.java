@@ -20,11 +20,11 @@ public class Test {
 
         registrierung.neuUser("Modjo","ange","Yaounde","285828282","12.06.1992","Yokadouma","Kamerun","ange@yahoo.fr","moi");
 
-        registrierung.neuUser("Modjo","ange","Yaounde","285828282","12.06.1992","Yokadouma","Kamerun","ange@yahoo.fr","moi");
+        registrierung.neuUser("Djoko","jaures","Douala","28528282","12.06.1980","Dakar","Senegal","jaures@yahoo.fr","nadine");
 
-        registrierung.neuUser("Modjo","ange","Yaounde","285828282","12.06.1992","Yokadouma","Kamerun","ange@yahoo.fr","moi");
+        registrierung.neuUser("Matebs","Ida","Buea","28582828332","12.06.1984","Paris","Francais","Ida@yahoo.fr","tchekina");
 
-        registrierung.neuUser("Modjo","ange","Yaounde","285828282","12.06.1992","Yokadouma","Kamerun","ange@yahoo.fr","moi");
+        registrierung.neuUser("Djouguela","Yves","Bamenda","28582833282","12.06.1982","Geselkirchen","Deutsch","Carlos@yahoo.fr","bigd");
 
         try {
 

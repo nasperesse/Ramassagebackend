@@ -1,5 +1,6 @@
 package cm.ramassage.Controller;
 
+import cm.ramassage.model.Fahrt;
 import cm.ramassage.model.User;
 import org.springframework.stereotype.Component;
 
@@ -108,5 +109,17 @@ public class Registrierung {
 
 
     }
+
+
+    /*public List<Fahrt> fahrtfinden (String ab, String an){
+
+        Query query = em.createQuery("select * from Fahrt where abfahrtsort=? and ankunftsort = ?");
+
+        query.setParameter(1,ab);
+        query.setParameter(2,an);
+
+
+
+    } */
 
 }
