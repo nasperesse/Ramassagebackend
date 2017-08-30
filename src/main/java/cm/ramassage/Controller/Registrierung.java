@@ -1,5 +1,6 @@
 package cm.ramassage.Controller;
 
+import cm.ramassage.model.Fahrt;
 import cm.ramassage.model.User;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +20,8 @@ public class Registrierung {
 
     @PersistenceContext
     EntityManager em;
+
+    boolean geprüft=false;
 
 
     public void neuUser(String name, String vorname, String aufenhaltsort, String telefonnr, String geburtsdatum, String geburtsort, String nationalite, String email, String pass) {
@@ -76,11 +79,47 @@ public class Registrierung {
              int id = result.get(0);
 
             User eingelogt = em.find(User.class,id);
-            System.out.println("Ihre Pass und email ist correct");
+
+            geprüft = true;
+          em.persist(eingelogt.fahrtanbieten("Yaounde", "12:20","12.06.2017","Douala", "12.12.2017","15:50"));
+          em.close();
+
+          System.out.println("Ihre Pass und email ist correct");
 
             System.out.println("willkommen herr oder mdme "+eingelogt.getName());
         }
 
     }
+
+    public void auloggen(){
+
+        geprüft = false;
+        System.out.println("Sie wurden richtig ausgeloogt");
+    }
+
+
+    public void fahrtanbieten(){
+
+        if (geprüft){
+
+
+
+        }
+        else System.out.println("Sie müssen zuerst ein  Konto besitzen");
+
+
+    }
+
+
+    /*public List<Fahrt> fahrtfinden (String ab, String an){
+
+        Query query = em.createQuery("select * from Fahrt where abfahrtsort=? and ankunftsort = ?");
+
+        query.setParameter(1,ab);
+        query.setParameter(2,an);
+
+
+
+    } */
 
 }

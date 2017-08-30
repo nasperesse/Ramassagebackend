@@ -1,14 +1,14 @@
 package cm.ramassage.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 @Entity
  @Table
 public class User {
-
-
-
 
 
 
@@ -102,7 +102,44 @@ public class User {
         return mdpasse;
     }
 
+    public String getTelefonnr() {
+        return telefonnr;
+    }
+
+    public Set<Fahrt> getFahrt() {
+        return fahrt;
+    }
+
+    public void setFahrt(Set<Fahrt> fahrt) {
+        this.fahrt = fahrt;
+    }
+
     public void setMdpasse(String mdpasse) {
         this.mdpasse = mdpasse;
+    }
+
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    Set<Fahrt> fahrt;
+
+
+    public Fahrt fahrtanbieten(String abfahrtsort, String abfahrtszeit, String abfahrtsdatum, String ankunftsort, String ankunftsdatum, String ankunftszeit){
+
+
+        Fahrt fa = new Fahrt();
+
+        fa.setAbfahrtsdatum(abfahrtsdatum);
+        fa.setAbfahrtsort(abfahrtsort);
+        fa.setAbfahrtszeit(abfahrtszeit);
+        fa.setAnkunfsdatum(ankunftsdatum);
+        fa.setAnkunfsort(ankunftsort);
+        fa.setGetAnkunfszeit(ankunftszeit);
+        fa.setUser(this);
+
+
+
+        return fa;
+
+
     }
 }
