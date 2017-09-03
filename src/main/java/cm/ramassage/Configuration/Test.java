@@ -1,6 +1,6 @@
 package cm.ramassage.Configuration;
 
-import cm.ramassage.Controller.Registrierung;
+import cm.ramassage.Controller.UserOperation;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.sql.*;
@@ -15,16 +15,16 @@ public class Test {
 
         ctx.scan("cm.ramassage");
 
-        Registrierung registrierung =(Registrierung ) ctx.getBean("control");
+        UserOperation userOperation =(UserOperation) ctx.getBean("control");
 
 
-        registrierung.neuUser("Modjo","ange","Yaounde","285828282","12.06.1992","Yokadouma","Kamerun","ange@yahoo.fr","moi");
+        userOperation.neuUser("Modjo","ange","Yaounde","285828282","12.06.1992","Yokadouma","Kamerun","ange@yahoo.fr","moi");
 
-        registrierung.neuUser("Djoko","jaures","Douala","28528282","12.06.1980","Dakar","Senegal","jaures@yahoo.fr","nadine");
+        userOperation.neuUser("Djoko","jaures","Douala","28528282","12.06.1980","Dakar","Senegal","jaures@yahoo.fr","nadine");
 
-        registrierung.neuUser("Matebs","Ida","Buea","28582828332","12.06.1984","Paris","Francais","Ida@yahoo.fr","shekina");
+        userOperation.neuUser("Matebs","Ida","Buea","28582828332","12.06.1984","Paris","Francais","Ida@yahoo.fr","shekina");
 
-        registrierung.neuUser("Djouguela","Yves","Bamenda","28582833282","12.06.1982","Geselkirchen","Deutsch","Carlos@yahoo.fr","bigd");
+        userOperation.neuUser("Djouguela","Yves","Bamenda","28582833282","12.06.1982","Geselkirchen","Deutsch","Carlos@yahoo.fr","bigd");
 
         try {
 
@@ -65,15 +65,15 @@ public class Test {
             e.printStackTrace();
         }
 
-        registrierung.istAuthentified("fi@ag.ge","nas");
+        userOperation.istAuthentified("fi@ag.ge","nas");
 
-        registrierung.istAuthentified("ange@yahoo.fr","moi");
+        userOperation.istAuthentified("ange@yahoo.fr","moi");
 
-        registrierung.istAuthentified("jaures@yahoo.fr","nadine");
+        userOperation.istAuthentified("jaures@yahoo.fr","nadine");
 
-        registrierung.istAuthentified("Ida@yahoo.fr","shekina");
+        userOperation.istAuthentified("Ida@yahoo.fr","shekina");
 
-        registrierung.istAuthentified("Carlos@yahoo.fr","bigd");
+        userOperation.istAuthentified("Carlos@yahoo.fr","bigd");
 
     }
 }

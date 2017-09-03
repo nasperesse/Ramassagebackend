@@ -5,7 +5,7 @@ import cm.ramassage.model.User;
 import org.springframework.stereotype.Component;
 
 
-
+import javax.jws.soap.SOAPBinding;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -16,7 +16,7 @@ import java.util.List;
 
 @Component("control")
 @Transactional
-public class Registrierung {
+public class UserOperation {
 
     @PersistenceContext
     EntityManager em;
@@ -121,5 +121,35 @@ public class Registrierung {
 
 
     } */
+
+
+    public User findUserByEmail(String email){
+
+
+        int id = 0;
+
+
+        String query = "select * from User where email ="+"''"+email+"''";
+
+      User user = em.find(User.class, query);
+      em.close();
+
+
+
+       return user;
+
+    }
+
+
+    public User removeUser(String email){
+
+        User user = em.merge(this.findUserByEmail(email));
+
+        em.remove(user);
+        em.close();
+
+        return user;
+
+    }
 
 }
