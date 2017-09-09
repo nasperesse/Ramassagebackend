@@ -1,13 +1,8 @@
 package cm.ramassage.mv;
 
 
-import cm.ramassage.Configuration.AppConfig;
-import cm.ramassage.Controller.Registrierung;
 import cm.ramassage.model.User;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import javax.inject.Inject;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
